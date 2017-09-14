@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hongyi Jiang</title>
+	<meta name="author" content="Hongyi Jiang" />
+	<meta name="keywords" content="fullpage,jquery,hongyi,jiang,fullscren,screen,full,iphone5,apple" />
+	<meta name="Resource-type" content="Document" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="csshake.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="imgs/wm.ico" media="screen" />
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+	<style>
+		#section0 img,
+		#section1 img{
+			margin: 0 0 0 0;
+		}
+		
+		#section0 p{
+			font-family: 'Handlee', cursive;
+			font-size: 2em;
+		}
+
+		#section0 h1, h4{
+			font-family: 'Handlee', cursive;
+		}
+
+		#menu {
+			font-family: 'Handlee', cursive;
+		}
+
+		#section2 img{
+			margin: 20px 0 0 52px;
+		}
+		#section3 img{
+			bottom: 0px;
+			position: absolute;
+			margin-left: -420px;
+		}
+		.intro p{
+			width: 50%;
+			margin: 0 auto;
+			font-size: 1.5em;
+		}
+		.twitter-share-button{
+			position: absolute;
+			z-index: 99;
+			right: 149px;
+			top: 9px;
+		}
+
+		.top{
+			margin-top: 50px;
+		}
+		/*.profile {
+    		border-radius: 50%;
+		}*/
+
+	</style>
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#1bbc9b', '#666666', '#CCCCCC', '#666666', '#D3C9B8', '#CCCCFF'],
+				anchors: ['1stPage', '2ndPage', '3rdpage', '4thpage', '5thpage','6thpage','lastPage'],
+				menu: '#menu',
+				scrollingSpeed: 1000
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="row col-xs-12">
+	<ul class="col-xs-12" id="menu">
+		<li data-menuanchor="1stPage" class="shake shake-slow"><a href="#1stPage">About me</a></li>
+		<li data-menuanchor="2ndPage" class="shake shake-slow"><a href="#2ndPage">Night sky</a></li>
+		<li data-menuanchor="3rdpage" class="shake shake-slow"><a href="#3rdpage">Travel portrait</a></li>
+		<li data-menuanchor="4thpage" class="shake shake-slow"><a href="#4thpage">Architecture</a></li>
+		<li data-menuanchor="5thpage" class="shake shake-slow"><a href="#5thpage">Landscape</a></li>
+		<li data-menuanchor="6thpage" class="shake shake-slow"><a href="#6thpage">Contact me</a></li>
+	</ul>
+</div>
+
+<div id="fullpage" ng-controller="mainController">
+	<div class="section" id="section0">
+		<h1 class="top">Hi~</h1>
+	</br>
+		<div class="row">
+			<div class="col-xs-4 shake shake-slow">
+		  		<p>I am a photographer.</p>
+		  	</div>
+		  	<div class="col-xs-4 shake shake-slow">
+		  		<p>I am Hongyi.</p>
+		  	</div>
+		  	<div class="col-xs-4 shake shake-slow">
+		  		<p>I am also a programmer.</p>
+		  	</div>
+		</div>	
+		<div class="row">
+		  <div class="col-xs-4">
+		  	</br>
+			<img class="img-responsive shake shake-slow" src="imgs/ca.png" alt="fullPage"/>
+		  </div>
+		  <div class="col-xs-4">
+			<img class="img-circle img-responsive shake shake-slow" src="imgs/p4.jpg" alt="fullPage"/>
+		</br></br></br></br>
+			<a href="#2ndPage">
+					<img class="img-responsive shake shake-constant" src="imgs/arrow.png"/>
+				  	</a>
+				  	<p>Scroll down to view my work</p>
+		  </div>
+		  <div class="col-xs-4">
+		  	</br>
+			<img class="img-responsive shake shake-slow" src="imgs/en.png" alt="fullPage"/>
+		  </div>
+		</div>
+		
+	</div>
+	
+	<div class="section" id="section1">
+		<div ng-repeat="num in nightSky"  class="slide">
+            <div class="intro ">
+                <img src="imgs/ni/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive"/>
+            </div>
+        </div>
+	</div>
+	
+	<div class="section" id="section1">
+		<div ng-repeat="num in travelPortrait"  class="slide">
+            <div class="intro ">
+                <img src="imgs/po/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive"/>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section1">
+		<div ng-repeat="num in architecture"  class="slide">
+            <div class="intro ">
+                <img src="imgs/ar/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive"/>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section1">
+		<div ng-repeat="num in landscape"  class="slide">
+            <div class="intro ">
+                <img src="imgs/la/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive"/>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section0">
+			</br></br></br>
+			<div class="row col-xs-12">
+				  <div class="col-xs-4">
+				  	<p>Facebook</p>
+					<img class="img-responsive shake shake-slow" src="imgs/Facebook.png" alt="fullPage"/>
+					<p>Hongyi Jiang</p>
+				  </div>
+				  <div class="col-xs-4">
+				  	<p>Instagram</p>
+					<img class="img-responsive shake shake-slow" src="imgs/Instagram.png" alt="fullPage"/>
+					<p>Watermelonaddict</p>
+				  </div>
+				  <div class="col-xs-4">
+				  	<p>Twitter</p>
+					<img class="img-responsive shake shake-slow" src="imgs/Twitter.png" alt="fullPage"/>
+					<p>@Beibeiuk</p>
+			  	</div>
+			</div>
+			
+			<div class="row col-xs-12">
+				 <div class="col-xs-4">
+				  </div>
+				  <div class="col-xs-4">
+				  </br></br></br></br></br></br></br></br>
+					<a href="#1stPage">
+					<img class="img-circle img-responsive  shake shake-constant" src="imgs/PaperPlane.svg"/>
+				  	</a>
+				  	<p>Fly to the top</p>
+				  </br></br>
+				  	<h4>Copyright 2016 © Hongyi Jiang</h4>
+				  </div>
+				  <div class="col-xs-4">
+				  </div>
+			</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>

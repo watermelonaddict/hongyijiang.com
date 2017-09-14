@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hongyi Jiang</title>
+	<meta name="author" content="Hongyi Jiang" />
+	<meta name="keywords" content="fullpage,jquery,hongyi,jiang,fullscren,screen,full,iphone5,apple" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="csshake.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link rel="stylesheet" type="text/css" href="pure-min.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="imgs/wm.ico" media="screen" />
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Handlee' />
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="jquery.transit.min.js"></script>
+</head>
+
+<body id="body" >
+	
+<div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+</div>
+    	
+<nav>
+	<ul id="menu">
+		<li data-menuanchor="1stPage" class="shake shake-slow"><a href="#1stPage">About me</a></li>
+		<li data-menuanchor="2ndPage" class="shake shake-slow"><a href="#2ndPage">Night sky</a></li>
+		<li data-menuanchor="3rdpage" class="shake shake-slow"><a href="#3rdpage">Travel portrait</a></li>
+		<li data-menuanchor="4thpage" class="shake shake-slow"><a href="#4thpage">Architecture</a></li>
+		<li data-menuanchor="5thpage" class="shake shake-slow"><a href="#5thpage">Landscape</a></li>
+		<li data-menuanchor="6thpage" class="shake shake-slow"><a href="#6thpage">Contact me</a></li>
+	</ul>
+</nav>
+
+<div id="fullpage" ng-controller="mainController">
+
+	<div class="section" id="section0">
+		<h1 class="top">Hi~</h1>
+	</br>
+		<div class="row">
+			<div class="col-xs-4 shake shake-slow">
+		  		<p>I am a photographer.</p>
+		  	</div>
+		  	<div class="col-xs-4 shake shake-slow">
+		  		<p>I am Hongyi.</p>
+		  	</div>
+		  	<div class="col-xs-4 shake shake-slow">
+		  		<p>I am also a programmer.</p>
+		  	</div>
+		</div>	
+		<div class="row">
+		  <div class="col-xs-4">
+		  	</br>
+			<img class="img-responsive shake shake-slow" src="imgs/ca.png" alt="fullPage"/>
+		  </div>
+		  <div class="col-xs-4">
+			<img class="img-circle img-responsive shake shake-slow" src="imgs/p5.jpg" alt="fullPage"/>
+		</br></br></br></br>
+			<a href="#2ndPage">
+					<img class="img-responsive shake shake-constant" src="imgs/arrow.png"/>
+				  	</a>
+				  	<p>Scroll down to view my work</p>
+		  </div>
+		  <div class="col-xs-4">
+		  	</br>
+			<img class="img-responsive shake shake-slow" src="imgs/en.png" alt="fullPage"/>
+		  </div>
+		</div>
+    </div>
+	
+	<div class="section" id="section1">
+		<div ng-repeat="num in nightSky"  class="slide">
+            <div class="intro ">
+            	<img src="imgs/ni/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive photo"/>
+            	<span class="title" style="display: none;"> {{ num.imgNum }} </span>
+            </div>
+        </div>
+	</div>
+	
+	<div class="section" id="section1">
+		<div ng-repeat="num in travelPortrait"  class="slide">
+            <div class="intro">
+                <img src="imgs/po/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive photo"/>
+                <span class="title" style="display: none;"> {{ num.imgNum }} </span>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section1">
+		<div ng-repeat="num in architecture"  class="slide">
+            <div class="intro">
+                <img src="imgs/ar/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive photo"/>
+                <span class="title" style="display: none;"> {{ num.imgNum }} </span>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section1">
+		<div ng-repeat="num in landscape"  class="slide">
+            <div class="intro ">
+                <img src="imgs/la/{{ num.imgNum + '.jpg' }}" alt="simple" class="img-rounded img-responsive photo"/>
+                <span class="title" style="display: none;"> {{ num.imgNum }} </span>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section0">
+			
+		<div class="row col-xs-12">
+				
+			<div class="col-xs-4">
+				  </br>
+				<img class="img-responsive shake shake-slow" src="imgs/Facebook.png" alt="fullPage"/>
+				<p>Hongyi Jiang</p>
+			</div>
+
+			<div class="col-xs-4">		
+									
+				</br>
+				<a href="#1stPage">
+				<img class="img-circle img-responsive  shake shake-constant" src="imgs/PaperPlane.svg"/>
+				</a>
+				<p>Fly to the top</p>
+
+			</div>
+
+			<div class="col-xs-4">
+				</br>
+				<img class="img-responsive shake shake-slow" src="imgs/Instagram.png" alt="fullPage"/>
+				<p>Watermelonaddict</p>
+			</div>
+
+		</div>
+			
+		<div class="row col-xs-12">
+				 
+		<div class="col-xs-4">
+				  	
+		</div>
+				  
+				  <div class="col-xs-4" ng-controller="formController">	  
+					</br></br></br>
+					<h1 style="display: none;">
+						Hi~ {{ name }}
+					</br></br>Thank you for your message!</h1>
+						
+						<form class="pure-form" name="myForm">
+							<fieldset>
+								<input name = "name" type="text"  ng-model="name" class="pure-input-1" placeholder="Name" required>
+  								<span ng-show="myForm.name.$touched && myForm.name.$invalid">May I know your name?</span>
+
+								<input name="email" type="email" ng-model="email" class="pure-input-1" placeholder="Email" required>
+								<span ng-show="myForm.email.$touched && myForm.email.$invalid">Invaild email</span>
+
+								<textarea name = "comment" class="pure-input-1" ng-model="comment" placeholder="Please leave your message here" required></textarea> 
+								<span ng-show="myForm.comment.$touched && myForm.comment.$invalid">Don't forget your message</span>
+
+								<button ng-click="insertData()" type="submit" class="pure-button pure-input-1 pure-button-primary">Send</button>
+							</fieldset>
+						</form>
+				  </div>
+
+				  <div class="col-xs-4">
+				  	
+				  </div>
+			</div>
+
+			<div class="row col-xs-12">
+				<footer class="top">
+					<h4>Copyright 2017 © Hongyi Jiang</h4>
+				</footer>
+			</div>
+	</div>
+</div>
+
+</body>
+</html>
